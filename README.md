@@ -57,7 +57,19 @@ Before implement Module 1, it is important to understand the concepts of **conta
 
 #### What Is a Container?
 
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
 
+#### Why Use Containers?
+
+Most companies utilize containers for their applications because of :
+
+**Speed:** Containers are lighweight, can be create and destroy in a fraction of seconds. They allow developers to work more effectively.
+
+**Dependency Control & Improved Pipeline:** A Docker container image is a point in time capture of an application's code and dependencies. This allows an engineering organization to create a standard pipeline for the application life cycle.
+
+**Density & Resource Efficiency:** Containers facilitate enhanced resource efficiency by allowing multiple heterogeneous processes to run on a single system.  
+
+**Flexibility:** The flexibility of Docker containers is based on their portability, ease of deployment, and small size.
 
 
 
