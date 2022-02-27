@@ -12,5 +12,54 @@ The traditional monolithic architectures are hard to scale. When introducing new
 
 Whereas within a microservices architecture, each application component runs as its own service and communicates with other services via a well-defined API. This architecture can be written using different framewords and programming languages, and can deploy them independently, as a single service, or as a group of services.
 
-Within a microservices architecture, each application component runs as its own service and communicates with other services via a well-defined API. Microservices are built around business capabilities, and each service performs a single function. Microservices can be written using different frameworks and programming languages, and you can deploy them independently, as a single service, or as a group of services.
+#### Application Architecture
+
+For this project, I will demonstrate how to run to run a simple monolithic application in a Docker container, deploy the same application as microservices, then switch traffic to the microservices without any downtime.
+
+![](pics/App-Architecture.png)
+
+
+**Monolithic Architecture**
+
+As the picture above indicates, the entire node.js application is run in a container as a single service and each container has the same features as all other containers. If one application feature experiences a spike in demand, the entire architecture must be scaled.
+
+**Microservices Architecture**
+
+Each feature of the node.js application in the microservices architecture, runs as a separate service within its own container. The services can scale and be updated independently of the others.
+
+
+This project consists of 5 mondules:
+
+**Module 1:** Containerize the Monolith
+
+**Module 2:** Deploy the Monolith
+
+**Module 3:** Break the Monolith
+
+**Module 4:** Deploy Microservices
+
+**Module 5:** Clean Up
+
+
+
+#### Let's get started !!!!
+
+
+
+### Module 1 - Containerize the Monolith
+
+In this module, I will build the container image for the monolithic node.js application and push it to Amazon Elastic Container Registry. This diagram below demonstrates how the process will go.
+
+![](pics/module1-diagram.png)
+
+
+Before implement Module 1, it is important to understand the concepts of **container**.
+
+#### What Is a Container?
+
+
+
+
+
+
 
