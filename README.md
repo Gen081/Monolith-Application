@@ -83,9 +83,11 @@ In the next few steps, I will be using **Docker**, **Github**, **Amazon Elast
 
 **1-** Have an Aws account.
 
-**2-** Install Docker
+**2-** Install Docker.
 
-**3-** Install the AWS CLI
+**3-** Install the AWS CLI.
+
+**4-** Have a text editor.
 
 
 
