@@ -73,5 +73,19 @@ Most companies utilize containers for their applications because of :
 
 
 
+### Implementation Instructions
+
+For the first part of this project, I will build the Docker container image for my monolithic node.js application and push it to Amazon Elastic Container Registry (Amazon ECR). 
+
+In the next few steps, I will be using **Docker**, **Github**, **Amazon Elastic Container Service (Amazon ECS)**, and **Amazon ECR** to deploy code into containers. To complete these steps, ensure you have the following tools.
+
+#### Prerequisites
+
+**1-** Have an Aws account.
+
+**2-** Install Docker
+
+**3-** Install the AWS CLI
+
 
 
