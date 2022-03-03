@@ -91,3 +91,65 @@ In the next few steps, I will be using **Docker**, **Github**, **Amazon Elast
 
 
 
+Let's start with the Prerequisites instructions: 
+
+**1- Have an AWS account.**
+![](pics/aws-pg.png)
+
+![](pics/aws-pg1.png)
+
+![](pics/aws-pg2.png)
+
+
+
+**2- Install Docker.**
+
+These are the commands use to install Docker on a Terminal.
+
+![](pics/docker-install0.png)
+
+![](pics/docker-install1.png)
+
+![](pics/docker-install2.png)
+
+![](pics/docker-install3.png)
+
+
+
+**3- Install AWS CLI.**
+
+**Note:** AWS CLI can be install on Linux, MacOS and WIndows. I will be using Linux.
+
+Installation instructions:
+
+1- Download the installation file, using this command:
+
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+```
+
+2- Unzip the installer by typing:
+
+```
+unzip awscliv2.zip
+```
+
+3- Run the install program. The installation command uses a file named install in the newly unzipped aws directory.
+
+```
+sudo ./aws/install
+```
+
+4- Confirm the installation with the following command. 
+
+```
+aws --version
+```
+
+![](pics/aws-cli.png)
+
+
+**3- Have a text editor.**
+
+I will be using Visual Studio code (VScode) as text editor for this project.
+
