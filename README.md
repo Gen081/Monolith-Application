@@ -153,3 +153,33 @@ aws --version
 
 I will be using Visual Studio code (VScode) as text editor for this project.
 
+
+
+After complete the prerequisites instructions let's download the code from GitHub: Navigate to https://github.com/awslabs/mazon-ecs-nodejs-microservices and select Clone or Download to download the GitHub repository to my local environment. I can also use GitHub Desktop or Git to clone the repository.
+
+![](pics/project-repo.png)
+
+![](pics/project-repo1.png)
+
+![](pics/project-repo2.png)
+
+
+Next Step:
+
+
+**Create the repository:**
+
+- Navigate to the [Amazon ECR console](https://console.aws.amazon.com/ecs/home?#/repositories).
+- On the **Repositories** page, select **Create Repository**.
+- On the Create repository page, enter the following name your repository: *api* **Note:** Under **Tag immutability**, leave the default settings.
+- Select **Create repository**.
+
+![](pics/ecr-console.png)
+
+![](pics/ecr-repo-name.png)
+
+![](pics/ecr-repo-name1.png)
+
+![](pics/ecr-repo-name2.png)
+
+
