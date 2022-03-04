@@ -192,6 +192,40 @@ Then
 ![](pics/ecr-repo1.png)
 
 
+Use the terminal to authenticate Docker log in:
+
+```
+docker login -u AWS -p $(aws ecr get-login-password --region the-region-you-are-in) xxxxxxxxx.dkr.ecr.the-region-you-are-in.amazonaws.com
+```
+![](pics/docker-login0.png)
+
+![](pics/docker-login.png)
+
+If after executing the ```aws configure``` command, still getting an ```permission denied```, type ```sudo``` in front of the docker login command :
+
+```
+sudo docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 857433934232.dkr.ecr.us-east-1.amazonaws.com
+```
+
+![](pics/docker-login1.png)
+
+
+Next, to build and push the image to Amazon ECR, run the following commands:
+
+![](pics/img-buildnpush.png)
+
+![](pics/img-buildnpush1.png)
+
+If there is ```permission denied```, then add ```sudo``` in front of the following commands
+
+![](pics/img-buildnpush2.png)
+
+![](pics/img-buildnpush3.png)
+
+
+
+
+
 
 
 
