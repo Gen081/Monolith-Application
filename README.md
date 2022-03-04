@@ -118,6 +118,11 @@ These are the commands use to install Docker on a Terminal.
 
 **3- Install AWS CLI.**
 
+**Note:** Before installing AWS CLI, it is very important to follow the prerequisites, otherwise there will be **Permission Denied**
+
+![](pics/aws-cli-prereq.png)
+
+
 **Note:** AWS CLI can be install on Linux, MacOS and WIndows. I will be using Linux.
 
 Installation instructions:
@@ -161,13 +166,17 @@ After complete the prerequisites instructions let's download the code from GitHu
 
 ![](pics/project-repo1.png)
 
-![](pics/project-repo2.png)
-
+![](pics/project-repo3.png)
 
 Next Step:
 
 
 **Create the repository:**
+
+**Note:** Login on AWS account with the IAM User credentials which was provided from the excel sheet when creating the USER.
+
+Then
+
 
 - Navigate to the [Amazon ECR console](https://console.aws.amazon.com/ecs/home?#/repositories).
 - On the **Repositories** page, select **Create Repository**.
@@ -176,10 +185,16 @@ Next Step:
 
 ![](pics/ecr-console.png)
 
-![](pics/ecr-repo-name.png)
+![](pics/ecr-repo.png)
 
 ![](pics/ecr-repo-name1.png)
 
-![](pics/ecr-repo-name2.png)
+![](pics/ecr-repo1.png)
+
+
+
+
+
+
 
 
