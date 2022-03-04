@@ -222,7 +222,7 @@ If there is ```permission denied```, then add ```sudo``` in front of the followi
 
 ![](pics/img-buildnpush3.png)
 
-
+![](pics/img-buildnpush4.png)
 
 
 
