@@ -248,6 +248,71 @@ Let's talk about this diagram in details.
 **e. Containerized node.js Monolith:** The node.js cluster parent is responsible for distributing traffic to the workers within the monolithic application. This architecture is containerized, but still monolithic because each container has all the same features of the rest of the containers.
 
 ### What is Amazon Elastic Container Service?
+Amazon Elastic Container Service (Amazon ECS) is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances.
+
+There is no additional charge for Amazon ECS. You pay for the AWS resources (for example, EC2 instances or EBS volumes) you create to store and run your application.
+
+**Services Used:**
+
+- [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
+- [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/)
+- [AWS CloudFormation](https://aws.amazon.com/cloudformation/)
+- [Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/applicationloadbalancer/)
+
+
+### Implementation Instructions
+
+Follow the step-by-step instructions below to deploy the node.js application using Amazon ECS.
+
+
+Create an Amazon ECS cluster deployed behind an Application Load Balancer. In order to do so, let's navigate to the AWS CloudFormation console. [AWS CloudFormation](https://aws.amazon.com/cloudformation/)
+
+**Step 1:** Create a Stack
+
+![](pics/create-stack0.png)
+
+![](pics/create-stack.png)
+
+![](pics/create-stack1.png)
+
+![](pics/create-stack2.png)
+
+![](pics/create-stack3.png)
+
+![](pics/create-stack4.png)
+
+![](pics/create-stack5.png)
+
+![](pics/create-stack6.png)
+
+![](pics/create-stack7.png)
+
+![](pics/create-stack8.png)
+
+
+**Step 2. Check your Cluster is Running**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dgdsgfdsgsfdgsfdbm .d,bm .df,sbg.d,f nhmd.b
+
+
+
+
+
+
 
 
 
