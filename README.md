@@ -237,6 +237,30 @@ In this module, I will use Amazon Elastic Container Service (Amazon ECS) to ins
 
 Let's talk about this diagram in details.
 
+**a. Client:** The client makes a request over port 80 to the load balancer.
+
+**b. Load Balancer:** The load balancer distributes requests across all available ports.
+
+**c. Target Groups:** Instances are registered in the application's target group.
+
+**d. Container Ports:** Each container runs a single application process which binds the node.js cluster parent to port 80 within its namespace.
+
+**e. Containerized node.js Monolith:** The node.js cluster parent is responsible for distributing traffic to the workers within the monolithic application. This architecture is containerized, but still monolithic because each container has all the same features of the rest of the containers.
+
+### What is Amazon Elastic Container Service?
+
+
+
+
+
+
+
+
+
+
+
+
+
 **a. Client:** The client makes traffic requests over port 80.
 
 **b. Load Balancer:** The ALB (Amazon Load Balancer) routes external traffic to the correct service. The ALB inspects the client request and uses the routing rules to direct the request to an instance and port for the target group matching the rule.
@@ -245,7 +269,7 @@ Let's talk about this diagram in details.
 
 **d. Microservices:** Amazon ECS deploys each service into a container across an EC2 cluster. Each container only handles a single feature.
 
-### Why Microservices?
+#### Why Microservices?
 
 There are several reasons why companies nowadays implement microservices:
 
@@ -257,3 +281,27 @@ When microservice best practices are followed, the result is that if an attacker
 **Independent Scaling:** When features are broken out into microservices, then the amount of infrastructure and number of instances used by each microservice class can be scaled up and down independently.
 
 **Development Velocity:** Developers can be confident that any code they write will actually not be able to impact the existing code at all unless they explicitly write a connection between two microservices.
+
+
+**Services Used:**
+
+- [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/)
+
+
+#### Implementation Instructions
+
+In the previous modules, I deployed my application as a monolith using a single service and a single container image repository.  In this module, I will break the monolith, meaning I will deploy the application as three microservices, therefore I will need to provision three repositories (one for each service) in Amazon ECR.
+
+The three services are:
+
+**1.** users
+
+**2.** threads
+
+**3.** posts
+
+Let's create repository for each service in Amazon ECR.
+
+![](pics/repos.png)
+
+
