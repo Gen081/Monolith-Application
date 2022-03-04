@@ -227,8 +227,33 @@ If there is ```permission denied```, then add ```sudo``` in front of the followi
 
 
 
+### Module 2 - Deploy the Monolith
 
+In this module, I will use Amazon Elastic Container Service (Amazon ECS) to instantiate a managed cluster of EC2 compute instances and deploy the image as a container running on the cluster.
 
+#### Architecture Overview
 
+![](pics/module2-architecture.png)
 
+Let's talk about this diagram in details.
 
+**a. Client:** The client makes traffic requests over port 80.
+
+**b. Load Balancer:** The ALB (Amazon Load Balancer) routes external traffic to the correct service. The ALB inspects the client request and uses the routing rules to direct the request to an instance and port for the target group matching the rule.
+
+**c. Target Groups:** Each service has a target group that keeps track of the instances and ports of each container running for that service.
+
+**d. Microservices:** Amazon ECS deploys each service into a container across an EC2 cluster. Each container only handles a single feature.
+
+### Why Microservices?
+
+There are several reasons why companies nowadays implement microservices:
+
+**Isolation of Crashes:** Good microservice architecture means that if one micro piece of your service is crashing, then only that part of your service will go down. The rest of your service can continue to work properly.
+
+**Isolation for Security:**
+When microservice best practices are followed, the result is that if an attacker compromises one service, they only gain access to the resources of that service, and cannot horizontally access other resources from other services without breaking into those services as well.
+
+**Independent Scaling:** When features are broken out into microservices, then the amount of infrastructure and number of instances used by each microservice class can be scaled up and down independently.
+
+**Development Velocity:** Developers can be confident that any code they write will actually not be able to impact the existing code at all unless they explicitly write a connection between two microservices.
