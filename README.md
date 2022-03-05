@@ -342,10 +342,90 @@ In the Add container window, do the followings:
 The Application Load Balancer (ALB) lets your service accept incoming traffic. The ALB automatically routes traffic to container instances running on your cluster using them as a target group.
 
 
+**Check your VPC Name:** 
+
+In order to do so, let's
+- Navigate to the [Load Balancer section of the EC2 Console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:).
+
+![](pics/load.png)
+
+![](pics/load1.png)
+
+![](pics/load2.png)
 
 
+**Configure the ALB Target Group**
+
+- Navigate to the [Target Group section of the EC2 Console.](https://console.aws.amazon.com/ec2/v2/home?#TargetGroups:)
+
+![](pics/target-group.png)
+
+- Select **Create target group**.
+
+![](pics/target-group1.png)
 
 
+![](pics/target-group2.png)
+
+
+![](pics/target-group3.png)
+
+
+![](pics/target-group4.png)
+
+
+![](pics/target-group5.png)
+
+
+The ALB listener checks for incoming connection requests to your ALB.
+
+**Add a Listener to the ALB**
+
+- Navigate to the [Load Balancer section of the EC2 Console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:).
+
+![](pics/listener.png)
+
+![](pics/listener1.png)
+
+![](pics/listener2.png)
+
+
+Deploy the monolith as a service into the cluster, follow these steps.
+
+- Navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home?) and select **Clusters** from the left menu bar.
+
+![](pics/cluster-upd.png)
+
+- On the **Configure service** page, edit the following parameters (and keep the default values for parameters not listed below):
+  - For the **Launch type**, select **EC2**.
+  - For the **Service name**, enter *api*.
+  - For the **Number of tasks**, enter *1*.
+  - Select **Next step**.
+
+
+![](pics/cluster-upd1.png)
+
+![](pics/cluster-upd2.png)
+
+![](pics/cluster-upd3.png)
+
+
+![](pics/cluster-upd4.png)
+
+![](pics/cluster-upd5.png)
+
+![](pics/cluster-upd6.png)
+
+![](pics/cluster-upd7.png)
+
+![](pics/cluster-upd8.png)
+
+
+![](pics/cluster-upd9.png)
+
+![](pics/cluster-upd10.png)
+
+![](pics/cluster-upd11.png)
 
 
 
