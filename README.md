@@ -423,32 +423,41 @@ Deploy the monolith as a service into the cluster, follow these steps.
 
 ![](pics/cluster-upd9.png)
 
+
+**To Find your Service URL:**
+
+- Navigate to the [Load Balancers](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:) section of the EC2 Console.
+- Select your load balancer **demo**.
+- In the **Description** tab, copy the DNS name and paste into a new browser tab or window.
+- You should see the message **Ready to receive requests**.
+
 ![](pics/cluster-upd10.png)
 
 ![](pics/cluster-upd11.png)
 
 
+**See Each Part of the Service:** The node.js application routes traffic to each worker based on the URL. To see a worker, simply add the worker name api/[worker-name] to the end of the DNS Name as follows:
+
+- http://*[DNS name]*/api/users
+```
+http://break-ecsal-1jki45996w4dh-1812061595.us-east-1.elb.amazonaws.com/api/users
+```
+![](pics/api-users.png)
+
+- http://*[DNS name]*/api/threads
+
+```
+http://break-ecsal-1jki45996w4dh-1812061595.us-east-1.elb.amazonaws.com/api/threads
+```
+![](pics/api-threads.png)
 
 
+- http://*[DNS name]*/api/posts
 
-
-
-
-
-
-dgdsgfdsgsfdgsfdbm .d,bm .df,sbg.d,f nhmd.b
-
-
-
-
-
-
-
-
-
-
-
-
+```
+http://break-ecsal-1jki45996w4dh-1812061595.us-east-1.elb.amazonaws.com/api/posts
+```
+![](pics/api-posts.png)
 
 
 
