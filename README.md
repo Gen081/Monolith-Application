@@ -273,11 +273,15 @@ Create an Amazon ECS cluster deployed behind an Application Load Balancer. In or
 
 ![](pics/create-stack.png)
 
+Select Upload a template file and choose the ecs.yml file from the GitHub project at amazon-ecs-nodejs-microservice/2-containerized/infrastructure/ecs.yml then select Next.
+
 ![](pics/create-stack1.png)
 
 ![](pics/create-stack2.png)
 
 ![](pics/create-stack3.png)
+
+On the **Configure stack options** page, keep the default options and scroll down and select **Next**.
 
 ![](pics/create-stack4.png)
 
@@ -290,10 +294,9 @@ Create an Amazon ECS cluster deployed behind an Application Load Balancer. In or
 ![](pics/create-stack8.png)
 
 
-**Step 2. Check your Cluster is Running**
+**Step 2. Check the Cluster is Running**
 
-
-
+Let's navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home?). My cluster should appear in the list.
 
 
 
@@ -322,17 +325,26 @@ dgdsgfdsgsfdgsfdbm .d,bm .df,sbg.d,f nhmd.b
 
 
 
+### Module 3 - Break the Monolith
 
+In this module, I will break the node.js application into several interconnected services and push each service's image to an Amazon Elastic Container Registry (Amazon ECR) repository.
+
+#### Architecture Overview
+
+The final application architecture uses Amazon Elastic Container Service (Amazon ECS) and the Application Load Balancer (ALB).
+
+![](pics/monolith-break.png)
 
 
 
 **a. Client:** The client makes traffic requests over port 80.
 
-**b. Load Balancer:** The ALB (Amazon Load Balancer) routes external traffic to the correct service. The ALB inspects the client request and uses the routing rules to direct the request to an instance and port for the target group matching the rule.
+**b. Load Balancer:** The ALB routes external traffic to the correct service. The ALB inspects the client request and uses the routing rules to direct the request to an instance and port for the target group matching the rule.
 
 **c. Target Groups:** Each service has a target group that keeps track of the instances and ports of each container running for that service.
 
 **d. Microservices:** Amazon ECS deploys each service into a container across an EC2 cluster. Each container only handles a single feature.
+
 
 #### Why Microservices?
 
