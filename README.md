@@ -299,6 +299,53 @@ On the **Configure stack options** page, keep the default options and scroll d
 Let's navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home?). My cluster should appear in the list.
 
 
+- Select the cluster BreakTheMonolith-Demo, then select the Tasks tab to verify that there are no tasks running.
+
+![](pics/clusters.png)
+
+![](pics/clusters0.png)
+
+
+- Select the **ECS Instances** tab to verify there are two Amazon EC2 instances created by the AWS CloudFormation template.
+
+
+![](pics/clusters1.png)
+
+Task definitions specify how Amazon ECS deploys the application containers across the cluster.
+
+From the Amazon ECS left navigation menu, select **Task Definitions**. Then Select **Create new Task Definition**
+
+![](pics/clusters2.png)
+
+- On the **Select launch type compatibility** page, select the **EC2** option then select **Next step**.
+
+![](pics/clusters3.png)
+
+On the **Configure task and container definitions** page, do the followings:
+
+
+![](pics/clusters4.png)
+
+In the Add container window, do the followings:
+
+![](pics/clusters5.png)
+
+![](pics/clusters6.png)
+
+![](pics/clusters7.png)
+
+![](pics/clusters8.png)
+
+![](pics/clusters9.png)
+
+
+The Application Load Balancer (ALB) lets your service accept incoming traffic. The ALB automatically routes traffic to container instances running on your cluster using them as a target group.
+
+
+
+
+
+
 
 
 
