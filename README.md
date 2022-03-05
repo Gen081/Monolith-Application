@@ -518,3 +518,66 @@ Let's create repository for each service in Amazon ECR.
 ![](pics/repos.png)
 
 
+To build and tag image of each service to docker, let's first open the terminal, and set the path from the project file to ```~/amazon-ecs-nodejs-microservices/3-microservices/services```
+
+- For service: **Users**
+
+Let's authenticate Docker login with ```users``` repository information:
+
+
+```
+sudo docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 857433934232.dkr.ecr.us-east-1.amazonaws.com
+```
+
+**Note**
+If there is a permission denied error message, please add sudo before the command:
+
+![](pics/users-docker-log.png)
+
+
+Build,Tag and Push Image with the following commands:
+
+![](pics/users-docker-img.png)
+
+![](pics/users-docker-img1.png)
+
+
+- For service: **Threads**
+
+Let's authenticate Docker login with 
+```threads``` repository information:
+
+```
+sudo docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 857433934232.dkr.ecr.us-east-1.amazonaws.com
+```
+
+![](pics/threads-docker-log.png)
+
+
+Build,Tag and Push Image with the following commands:
+
+![](pics/threads-docker-img.png)
+
+![](pics/threads-docker-img1.png)
+
+
+- For service: **Posts**
+
+Let's authenticate Docker login with 
+```posts``` repository information:
+
+```
+sudo docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 857433934232.dkr.ecr.us-east-1.amazonaws.com
+```
+![](pics/posts-docker-log.png)
+
+
+Build,Tag and Push Image with the following commands:
+
+![](pics/posts-docker-img.png)
+
+![](pics/posts-docker-img1.png)
+
+
+
+
