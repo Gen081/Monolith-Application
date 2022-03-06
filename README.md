@@ -580,4 +580,97 @@ Build,Tag and Push Image with the following commands:
 
 
 
+### Module 4 - Deploy Microservices
+
+In this module, I will deploy the node.js application as a set of interconnected services behind an Application Load Balancer (ALB). Then, I will use the ALB to seamlessly shift traffic from the monolith to the microservices. 
+
+
+#### Architecture Overview
+
+This architecture will deploy the microservices and safely transition the application's traffic away from the monolith.
+
+![](pics/module4-architecture.png)
+
+![](pics/module4-architecture.png)
+
+
+Here is a description of this above architecture.
+
+1. **Switch the Traffic** This is the starting configuration. The monolithic node.js app running in a container on Amazon ECS.
+2. **Start Microservices** Using the three container images you built and pushed to Amazon ECR in the previous module, you will start up three microservices on your existing Amazon ECS cluster.
+3. **Configure the Target Groups** Like in Module 2, you will add a target group for each service and update the ALB Rules to connect the new microservices.
+4. **Shut Down the Monolith** By changing one rule in the ALB, you will start routing traffic to the running microservices. After traffic reroute has been verified, shut down the monolith.
+
+**Services Used:**
+
+- [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
+- [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/)
+- [AWS CloudFormation](https://aws.amazon.com/cloudformation/)
+- [Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/applicationloadbalancer/)
+
+
+
+#### Implementation Instructions
+
+The step-by-step instructions below will deploy the microservices.
+
+I will deploy three new services to the cluster that I launched in Module 2. Like Module 2, I will write Task Definitions for each service.
+
+
+To speed things up, in this next step I will create task definitions for each service (users, threads, posts) from the Amazon ECS console by writing them as JSON.
+
+Here is the JSON template:
+
+```
+{
+    "containerDefinitions": [
+        {
+            "name": "[service-name]",
+            "image": "[account-id].dkr.ecr.[region].amazonaws.com/[service-name]:[tag]",
+            "memoryReservation": "256",
+            "cpu": "256",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": "0",
+                    "containerPort": "3000",
+                    "protocol": "tcp"
+                }
+            ]
+        }
+    ],
+    "volumes": [],
+    "networkMode": "bridge",
+    "placementConstraints": [],
+    "family": "[service-name]"
+}
+```
+
+Follow these steps below: 
+
+1. From the [Amazon Container Services console](https://console.aws.amazon.com/ecs/home/), under **Amazon ECS**, select **Task definitions**.
+
+2. In the **Task Definitions** page, select the **Create new Task Definition** button.
+3. In the **Select launch type compatibility** page, select the **EC2** option and then select **Next step**.
+4. In the Configure task and container definitions page, scroll to the **Volumes** section and select the **Configure via JSON** button.
+5. Copy and paste the following code snippet into the JSON field, replacing the existing code.Remember to replace the [service-name], [account-ID], [region], and [tag] placeholders.
+
+
+- For Service: **Users**
+
+![](pics/mod4-U-taskdef.png)
+
+![](pics/mod4-U-taskdef.png)
+
+![](pics/mod4-U-json.png)
+
+![](pics/mod4-U-b-json.png)
+
+![](pics/mod4-U-b1-json.png)
+
+![](pics/mod4-U-taskdef-C.png)
+
+
+
+- For Service: **Threads**
 
