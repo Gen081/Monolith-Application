@@ -819,11 +819,32 @@ On the Configure network page, edit the following parameters:
 ![](pics/mod4-clustersU-4.png)
 
 
+- For Service: **Threads**
 
 
+Navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home) and select **Clusters** from the left menu bar.
+
+Select the cluster **BreakTheMonolith-Demo**, select the **Services** tab then select **Create**.
+
+![](pics/mod4-clusters2.png)
 
 
+On the Configure service page, edit the following parameters:
+
+![](pics/mod4-clustersT.png)
 
 
+On the Configure network page, edit the following parameters:
+
+![](pics/mod4-clustersT-1.png)
+
+
+![](pics/mod4-clustersT-2.png)
+
+
+![](pics/mod4-clustersT-3.png)
+
+
+![](pics/mod4-clustersT-4.png)
 
 
