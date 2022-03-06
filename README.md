@@ -705,3 +705,43 @@ Follow these steps below:
 ![](pics/mod4-3S-taskdef-C.png)
 
 
+As in Module 2, configure a target group for each service (posts, threads, and users). A target group allows traffic to correctly reach a specified service. I will configure the target groups using AWS CLI. However, before proceeding, ensure the correct VPC name that is being used for this project: 
+
+- Navigate to the [Load Balancer section of the EC2 Console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:).
+- Select the checkbox next to demo, select the **Description** tab, and locate the **VPC** attribute (in this format: vpc-xxxxxxxxxxxxxxxxx). **Note:** You will need the VPC attribute when you configure the target groups.
+
+![](pics/vpc-attribute.png)
+
+
+#### Configure the Target Groups
+
+Service names: posts, threads, users, and drop-traffic
+
+```
+aws elbv2 create-target-group --region [region] --name [service-name] --protocol HTTP --port 80 --vpc-id [vpc-attribute] --healthy-threshold-count 2 --unhealthy-threshold-count 2 --health-check-timeout-seconds 5 --health-check-interval-seconds 6
+```
+
+- For Service: **Users**
+
+![](pics/mod4-U-targetG.png)
+
+
+- For Service: **Threads**
+
+![](pics/mod4-T-targetG.png)
+
+
+- For Service: **Posts**
+
+![](pics/mod4-P-targetG.png)
+
+
+- For Service: **Drop-Traffic**
+
+![](pics/mod4-DT-targetG.png)
+
+
+
+![](pics/mod4-3S-targetG.png)
+
+
