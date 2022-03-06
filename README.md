@@ -787,6 +787,8 @@ There should only be one listener listed in this tab. Take the following steps t
 ![](pics/mod4-3S-rules.png)
 
 
+Deploy the three microservices (posts, threads, and users) to the cluster. Repeat these steps for each of the three microservices:
+
 
 
 
