@@ -950,3 +950,80 @@ Break-ECSAL-1JKI45996W4DH-1812061595.us-east-1.elb.amazonaws.com/api/posts
 ```
 
 ![](pics/mod4-url-posts.png)
+
+
+### Module Five - Clean Up
+
+In this module, I will terminate the resources I created during this project. I will stop the services running on Amazon ECS, delete the ALB, and delete the AWS CloudFormation stack to terminate the ECS cluster, including all underlying EC2 instances.
+
+Cleaning up is not required, but will help avoiding ongoing charges for keeping these services running.
+
+**Services Used:**
+
+- [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
+- [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/)
+- [Amazon EC2](https://aws.amazon.com/ec2/)
+- [Amazon VPC](https://aws.amazon.com/vpc/)
+- [Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/applicationloadbalancer/)
+
+
+
+#### Clean Up Instructions
+
+Follow the instructions below to delete the AWS resources I created in each module.
+
+Start clean up by deleting each of the services (posts, threads, abd users) that are running in my cluster:
+
+- Navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home?) and select **Clusters**.
+
+![](pics/mod5-cleanUp.png)
+
+![](pics/mod5-cleanUp1.png)
+
+I can stop all services that running all at once:
+
+![](pics/mod5-cleanUp2.png)
+
+![](pics/mod5-cleanUp3.png)
+
+![](pics/mod5-cleanUp4.png)
+
+
+
+Repeat these steps for each of your services on the cluster.
+
+- Navigate to the Load Balancer section of the EC2 Console.
+
+![](pics/mod5-cleanUp5.png)
+
+![](pics/mod5-cleanUp6.png)
+
+![](pics/mod5-cleanUp7.png)
+
+
+- Navigate to the AWS CloudFormation console.
+
+![](pics/mod5-cleanUp8.png)
+
+
+![](pics/mod5-cleanUp9.png)
+
+
+- Navigate to Task Definitions in the Amazon ECR console.
+
+![](pics/mod5-cleanUp10.png)
+
+![](pics/mod5-cleanUp11.png)
+
+![](pics/mod5-cleanUp12.png)
+
+![](pics/mod5-cleanUp13.png)
+
+![](pics/mod5-cleanUp14.png)
+
+![](pics/mod5-cleanUp15.png)
+
+![](pics/mod5-cleanUp16.png)
+
+
+
