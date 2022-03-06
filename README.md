@@ -674,3 +674,19 @@ Follow these steps below:
 
 - For Service: **Threads**
 
+![](pics/mod4-T-taskdef.png)
+
+![](pics/mod4-T-taskdef1.png)
+
+![](pics/mod4-T-json.png)
+
+![](pics/mod4-T-b-json.png)
+
+![](pics/mod4-T-b1-json.png)
+
+![](pics/mod4-T-taskdef-C.png)
+
+
+- For Service: **Posts**
+
+
