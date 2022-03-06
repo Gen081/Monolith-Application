@@ -745,3 +745,48 @@ aws elbv2 create-target-group --region [region] --name [service-name] --protocol
 ![](pics/mod4-3S-targetG.png)
 
 
+
+The listener checks for incoming connection requests to your ALB in order to route traffic appropriately.
+
+To make the transition from monolith to microservices, I will start routing traffic to the microservices and stop routing traffic to the monolith.
+
+**Access the listener rules**
+
+- Navigate to the [Load Balancer section of the EC2 Console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:).
+- Locate the Load Balancer named **demo** and select the checkbox next to it to see the Load Balancer details.
+- Select the **Listeners** tab.
+
+
+**Update the listener rules**
+
+There should only be one listener listed in this tab. Take the following steps to edit the listener rules:
+
+![](pics/mod4-listener-update.png)
+
+![](pics/mod4-rulespg.png)
+
+
+- Use the following rule template to insert the necessary rules for each service:
+  - IF Path = /api/[service-name]* THEN Forward to [service-name]For example: IF Path = /api/posts* THEN Forward to posts
+
+  - Insert the rules in the following order:
+    - api: */api** forwards to *api*
+    - users: */api/users** forwards to *users*
+    - threads: */api/threads** forwards to *threads*
+    - posts: */api/posts** forwards to *posts*
+
+
+![](pics/mod4-api.png)
+
+![](pics/mod4-api-U.png)
+
+![](pics/mod4-api-T.png)
+
+![](pics/mod4-api-P.png)
+
+![](pics/mod4-3S-rules.png)
+
+
+
+
+
