@@ -689,4 +689,16 @@ Follow these steps below:
 
 - For Service: **Posts**
 
+![](pics/mod4-P-taskdef.png)
+
+![](pics/mod4-P-taskdef1.png)
+
+![](pics/mod4-P-json.png)
+
+![](pics/mod4-P-b-json.png)
+
+![](pics/mod4-P-b1-json.png)
+
+![](pics/mod4-P-taskdef-C.png)
+
 
