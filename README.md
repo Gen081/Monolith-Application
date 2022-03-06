@@ -790,5 +790,40 @@ There should only be one listener listed in this tab. Take the following steps t
 Deploy the three microservices (posts, threads, and users) to the cluster. Repeat these steps for each of the three microservices:
 
 
+- For Service: **Users**
+
+
+Navigate to the [Amazon ECS console](https://console.aws.amazon.com/ecs/home) and select **Clusters** from the left menu bar.
+
+Select the cluster **BreakTheMonolith-Demo**, select the **Services** tab then select **Create**.
+
+![](pics/mod4-clusters1.png)
+
+
+On the Configure service page, edit the following parameters:
+
+![](pics/mod4-clustersU.png)
+
+
+On the Configure network page, edit the following parameters:
+
+![](pics/mod4-clustersU-1.png)
+
+
+![](pics/mod4-clustersU-2.png)
+
+
+![](pics/mod4-clustersU-3.png)
+
+
+![](pics/mod4-clustersU-4.png)
+
+
+
+
+
+
+
+
 
 
