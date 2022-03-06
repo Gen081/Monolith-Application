@@ -881,3 +881,72 @@ On the Configure network page, edit the following parameters:
 The microservices are now running
 
 ![](pics/mod4-3S-clusters.png)
+
+
+Next steps is to reroute traffic to the microservices, let's take the following steps to update the listener rules:
+
+- Navigate to the [Load Balancers section of the EC2 Console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:).
+
+![](pics/mod4-LB-reroute.png)
+
+
+Select the edit (pencil) icon next to the default rule (HTTP 80: default action).
+
+![](pics/mod4-LB-reroute1.png)
+
+
+Update the default rule to forward to drop-traffic:
+
+![](pics/mod4-LB-reroute2.png)
+
+![](pics/mod4-LB-reroute3.png)
+
+
+**Disable the monolith:** With traffic now flowing to the microservices, I can disable the monolith service.
+
+![](pics/mod4-disable-mono.png)
+
+![](pics/mod4-disable1-mono.png)
+
+![](pics/mod4-disable2-mono.png)
+
+I have now fully transitioned my node.js from the monolith to microservices, without any downtime!
+
+
+**Find your service URL:** This is the same URL that I used in Module 2 of this project.
+
+
+- Navigate to the [Load Balancers section of the EC2 console](https://console.aws.amazon.com/ec2/v2/home?#LoadBalancers:).
+
+Paste the DNS name into a new browser tab or window.
+
+![](pics/mod4-service-url.png)
+
+
+See the values for each microservice: 
+To see each service, simply add the service name to the end of your DNS name:
+
+- http://[DNS name]/api/users
+
+```
+Break-ECSAL-1JKI45996W4DH-1812061595.us-east-1.elb.amazonaws.com/api/users
+```
+![](pics/mod4-url-users.png)
+
+
+- http://[DNS name]/api/threads
+
+```
+Break-ECSAL-1JKI45996W4DH-1812061595.us-east-1.elb.amazonaws.com/api/threads
+```
+
+![](pics/mod4-url-threads.png)
+
+
+- http://[DNS name]/api/posts
+
+```
+Break-ECSAL-1JKI45996W4DH-1812061595.us-east-1.elb.amazonaws.com/api/posts
+```
+
+![](pics/mod4-url-posts.png)
